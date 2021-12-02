@@ -14,8 +14,8 @@ Guide d'installation dev
 
 ## Installation
 
-Télécharger et installer [Unity](https://unity.com/) 
-Cloner le projet
+Télécharger et installer [Unity](https://unity.com/) \
+Cloner le projet :
 
 ```bash
 git clone git@github.com:JMRG28/Projet-AR.git
