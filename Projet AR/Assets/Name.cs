@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Name : MonoBehaviour
 {
-    public string name;
-    public InputField inputField;
-    public GameObject textDisplay;
+    public TMP_InputField inputField;
+    public TMP_Text UIName;
+    // public GameObject textDisplay;
 
     public void StoreName() 
-     {  
-         Debug.Log(inputField..GetComponent<Text>().text);
-         name = inputField..GetComponent<Text>().text;
+     {  string name = inputField.text;
+         
+
+         UIName.text = "Salut " + name + " !";
+         Debug.Log(UIName.text);
 
         // textDisplay.text = "Salut " + name;
 
