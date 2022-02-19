@@ -13,13 +13,9 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - Projet\ AR/
+          - Projet-AR/Projet\ AR/
         targetPlatform:
-          - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
-          - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - StandaloneLinux64 # Build a Linux 64-bit standalone.
-          - iOS # Build an iOS player.
-          - WebGL # WebGL.
+          - Android
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
