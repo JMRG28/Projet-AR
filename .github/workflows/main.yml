@@ -42,7 +42,7 @@ jobs:
 
       # Build
       - name: Build project
-        uses: game-ci/unity-builder@v2
+        uses: game-ci/unity-builder@v2.0-alpha-6
         with:
           projectPath: Projet AR
           targetPlatform: Android
