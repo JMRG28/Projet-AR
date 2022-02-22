@@ -41,8 +41,8 @@ jobs:
       #    projectPath: test-projects/test-project
 
       # Build
-      - name: Build project
-        uses: game-ci/unity-builder@v2.0-alpha-6
+      - name: Unity - Builder
+        uses: game-ci/unity-builder@v2.0.0-alpha-14
         with:
           projectPath: Projet AR
           targetPlatform: Android
