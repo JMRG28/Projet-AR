@@ -42,10 +42,12 @@ jobs:
 
       # Build
       - name: Unity - Builder
-        uses: game-ci/unity-builder@v2.0-alpha-12
+        uses: game-ci/unity-builder@v2.0-alpha-13
         with:
           projectPath: Projet AR
           targetPlatform: Android
+
+
 
       # Output
       - uses: actions/upload-artifact@v2
