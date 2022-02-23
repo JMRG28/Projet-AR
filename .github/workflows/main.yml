@@ -41,14 +41,12 @@ jobs:
       #    projectPath: test-projects/test-project
 
       # Build
-      #- name: Unity - Builder
-      #  uses: game-ci/unity-builder@v2.0-alpha-12
-      #  with:
-      #    projectPath: Projet AR
-      #    targetPlatform: Android
-      
-      - name: Build Unity
-        uses: kuler90/build-unity@v1.0.4
+      - name: Unity - Builder
+        uses: game-ci/unity-builder@v2.0-alpha-13
+        with:
+          projectPath: Projet AR
+          targetPlatform: Android
+
 
 
       # Output
