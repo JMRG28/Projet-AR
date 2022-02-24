@@ -41,27 +41,29 @@ jobs:
       #    projectPath: test-projects/test-project
 
       # Build
-      # - name: Unity - Builder
-      #   uses: game-ci/unity-builder@v2.0-alpha-13
-      #   with:
-      #     projectPath: Projet AR
-      #     targetPlatform: Android
+      - name: Unity - Builder
+        uses: game-ci/unity-builder@v2.0-alpha-13
+        with:
+          projectPath: Projet AR
+          targetPlatform: Android
 
 
 
-      # # Output
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: Build
-      #     path: build
+      # Output
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build
+          path: build
     
       
+      - name: Display structure of downloaded files
+        run: ls -R
 
       - uses: underwindfall/create-release-with-debugapk@v2.0.0
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.run_id }}
-          asset_path: Projet AR/build
+          asset_path: build/Android.apk
           asset_name: Cerealis.apk
           asset_content_type: application/zip
