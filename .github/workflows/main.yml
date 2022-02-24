@@ -46,6 +46,7 @@ jobs:
         with:
           projectPath: Projet AR
           targetPlatform: Android
+          allowDirtyBuild: true
 
 
 
