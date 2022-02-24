@@ -35,10 +35,10 @@ jobs:
           key: Library-test
 
       # Test
-      #- name: Run tests
-      #  uses: game-ci/unity-test-runner@v2
-      #  with:
-      #    projectPath: test-projects/test-project
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v2.0.0-alpha-7
+        with:
+          projectPath: Projet AR
 
       # Build
       - name: Unity - Builder
