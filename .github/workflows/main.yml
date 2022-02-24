@@ -54,9 +54,9 @@ jobs:
         with:
           name: Build
           path: build
-          
-      - name: Releasing using Hub
-        uses: ShaunLWM/action-release-debugapk@master
+    
+      
+      - uses: ShaunLWM/action-release-debugapk@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           APP_FOLDER: build
