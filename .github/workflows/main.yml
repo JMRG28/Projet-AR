@@ -55,12 +55,9 @@ jobs:
           name: Build
           path: build
           
-      - name: Create release and upload apk
-        uses: underwindfall/create-release-with-debugapk@v2.0.0
+      - name: Releasing using Hub
+        uses: ShaunLWM/action-release-debugapk@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v1.0.0
-          asset_path: build/Android.apk
-          asset_name: Cerealis.apk
-          asset_content_type: application/zip
+          APP_FOLDER: build
+          RELEASE_TITLE: New Build
