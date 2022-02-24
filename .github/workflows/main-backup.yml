@@ -7,7 +7,7 @@
 
 # jobs:
 #   readmeWorkflow:
-#     name: Readme Workflow ✨
+#     name: 🤖 Android Build 🤖
 #     runs-on: ubuntu-latest
 #     steps:
 #       - name: Checkout code
@@ -53,5 +53,15 @@
 #       - uses: actions/upload-artifact@v2
 #         with:
 #           name: Build
-#           path: Projet AR/build
-#           unityVersion: 2020.1.1f1
+#           path: build
+    
+      
+
+#       - uses: underwindfall/create-release-with-debugapk@v2.0.0
+#         env:
+#             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           tag_name: v1.0.1
+#           asset_path: build
+#           asset_name: Cerealis.apk
+#           asset_content_type: application/zip
