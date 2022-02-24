@@ -7,7 +7,7 @@ env:
 
 jobs:
   readmeWorkflow:
-    name: Readme Workflow ✨
+    name: 🤖 Android Build 🤖
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -54,4 +54,3 @@ jobs:
         with:
           name: Build
           path: Projet AR/build
-          unityVersion: 2020.1.1f1
