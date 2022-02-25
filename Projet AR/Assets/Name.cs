@@ -1,52 +1,52 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Net;
 using System.Collections.Specialized;
 using System.IO;
-
+using System.Web;
+using UnityEngine;
+using UnityEngine.Networking;
+using System.Collections;
 
 public class Name : MonoBehaviour
 {
+
     public TMP_InputField inputField;
     public TMP_Text UIName;
 
-    // public GameObject textDisplay;
-
+    public TMP_InputField inputFieldMail;
+    public TMP_Text UIMail;
     public void StoreName()
     {
         string name = inputField.text;
-
-
         UIName.text = "Salut " + name + " !";
+        string Mail = inputFieldMail.text;
+        UIMail.text = "Email enregistré : " + Mail + " !";
         Debug.Log(UIName.text);
 
-       
+        StartCoroutine(Upload());
+    }
+
+    IEnumerator Upload()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("nom", inputField.text);
+        form.AddField("email", inputFieldMail.text);
         string url = "https://eoew1xg9m7wyqzs.m.pipedream.net";
-        
-        var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-        httpWebRequest.ContentType = "application/json";
-        httpWebRequest.Method = "POST";
 
-        using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
         {
-            string json = "{\"user\":\""+name+"\",}";
+            yield return www.SendWebRequest();
 
-            streamWriter.Write(json);
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
+            }
         }
-
-        var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-        using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-        {
-            var result = streamReader.ReadToEnd();
-            Debug.Log(result);
-        }
-
-        
-
-
-
     }
 }
