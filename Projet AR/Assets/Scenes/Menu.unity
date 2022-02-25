@@ -364,7 +364,7 @@ MonoBehaviour:
   inputField: {fileID: 522627922}
   UIName: {fileID: 807738237}
   inputFieldMail: {fileID: 1013452672}
-  UIMail: {fileID: 99052669}
+  UIMail: {fileID: 1235983934}
 --- !u!4 &170490823
 Transform:
   m_ObjectHideFlags: 0
