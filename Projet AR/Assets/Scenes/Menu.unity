@@ -3707,7 +3707,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Mail, Assembly-CSharp
         m_MethodName: StoreMail
